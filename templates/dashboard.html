@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<body style="background-color:white;">
+  <img src="/static/hr_logo.png" width="100" height="100" class="center">
+  <!-- Navigation -->
+  <title>Welkom bij Hogeschool Rotterdam</title>
+  <p><strong>Welkom bij Hogeschool Rotterdam</strong></p>
+  <div style='transform: scale(0.65); position: relative; top: -100px;'>
+    <h3>Hoeveel zin heb je in de les van vandaag?</h3>
+    <p>Kies je antwoord.</p>
+    <hr />
+  <main>
+    <div id='block-11' style='padding: 10px;'>
+      <label for='option-11' style=' padding: 5px; font-size: 2.5rem;'>
+        <input type='radio' name='option' value='Niet zoveel zin' id='option-11' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+        Ik wil zo snel mogelijk weer naar huis.</label>
+      <span id='result-11'></span>
+    </div>
+    <hr />
+  
+    <div id='block-12' style='padding: 10px;'>
+      <label for='option-12' style=' padding: 5px; font-size: 2.5rem;'>
+        <input type='radio' name='option' value='Mwah, er zijn dagen waar ik meer zin heb in school.' id='option-12' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+        Ik heb niet heel veel zin in school.</label>
+      <span id='result-12'></span>
+    </div>
+    <hr />
+  
+    <div id='block-13' style='padding: 10px;'>
+      <label for='option-13' style=' padding: 5px; font-size: 2.5rem;'>
+        <input type='radio' name='option' value='Ik heb zin in de les.' id='option-13' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+        Ik heb zin in school vandaag.</label>
+      <span id='result-13'></span>
+    </div>
+    <hr />
+  
+    <div id='block-14' style='padding: 10px;'>
+      <label for='option-14' style=' padding: 5px; font-size: 2.5rem;'>
+        <input type='radio' name='option' value='Ik sta te popelen om te beginnen!' id='option-14' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+        Ik sta te popelen om te beginnen!</label>
+      <span id='result-14'></span>
+    </div>
+    <hr />
+    <button type='button' onclick="window.location='start';" style='width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700;'>Submit</button>
+  </div>
+  <a id='showanswer1'></a>
+  <script>
+    //    The function evaluates the answer and displays result
+    function displayAnswer1() {
+      if (document.getElementById('option-11').checked) {
+        document.getElementById('block-11').style.border = '3px solid limegreen'
+        document.getElementById('result-11').style.color = 'limegreen'
+        document.getElementById('result-11').innerHTML = 'Bedankt voor je antwoord!'
+      }
+      if (document.getElementById('option-12').checked) {
+        document.getElementById('block-12').style.border = '3px solid limegreen'
+        document.getElementById('result-12').style.color = 'limegreen'
+        document.getElementById('result-12').innerHTML = 'Bedankt voor je antwoord!'
+        showCorrectAnswer1()
+      }
+      if (document.getElementById('option-13').checked) {
+        document.getElementById('block-13').style.border = '3px solid limegreen'
+        document.getElementById('result-13').style.color = 'limegreen'
+        document.getElementById('result-13').innerHTML = 'Bedankt voor je antwoord!'
+        showCorrectAnswer1()
+      }
+      if (document.getElementById('option-14').checked) {
+        document.getElementById('block-14').style.border = '3px solid limegreen'
+        document.getElementById('result-14').style.color = 'limegreen'
+        document.getElementById('result-14').innerHTML = 'Bedankt voor je antwoord!'
+        showCorrectAnswer1()
+      }
+    }
+    // the functon displays the link to the correct answer
+  </script>
+
+<li><a href="/start" class="buttonstyle_green">Ga naar dashboard</a></li>
+</main>
+
+
+<!-- Content will go here -->
+
+</body>
+</html>
+

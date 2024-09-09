@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {background: #fff7ea;}
+ 		h1 {
+			text-align: center;
+			font-size: 40px;
+		}
+ 		h2 {
+			text-align: center;
+			font-size: 24px;
+		}
+		p {text-align: center;}
+		img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		button {
+  			position: absolute;
+  			left: 50%;
+  			transform: translateX(-50%);
+		}
+	</style>
+	<title>Student Easy Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+<article>
+	<header>
+		<img src="static/hr_logo.png" width="200" height="200">
+		<h1><strong>Welkom bij de les!</strong></h1>
+		<h1 id=dateTime> clock</h1>
+
+	</header>
+	<section>
+		<h2>Scan de QR code om in te checken voor deze les.</h2>
+		<img id = qr src="static/login_qr_code.png" width="300" height="300"><br>
+
+		<button type="button"
+		onclick="document.getElementById('qr').src='static/login_qr_code_blank.png'">
+		Sluit login af voor studenten</button>
+		<br>
+
+		<br>
+		<button id = manual type="button"
+		onclick="document.getElementById('qr').src='static/login_qr_code_blank.png'">
+		Handmatig Inchecken</button>
+		<br>
+
+	</section>
+	<script>
+		/* Based off of: https://dev.to/dboatengx/build-a-real-time-changing-digital-clock-using-html-css-javascript-689 */
+		/* Clock display options */
+		options = {
+			year: 'numeric', month: 'long', day: 'numeric',
+			hour: 'numeric', minute: 'numeric', second: 'numeric'
+		};
+		/* Clock parameters */
+		const clock = () => dateTime.innerText=new Intl.DateTimeFormat('nl-NL', options).format(new Date())
+		clock()
+		setInterval(clock, 1000);
+	</script>
+	<footer>
+    	<p>2023 Hogeschool Rotterdam.<br></p>
+	</footer>
+</article>
+</body>
+</html>
