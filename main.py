@@ -1,19 +1,28 @@
-import qrcode, os.path, sys, sqlite3
+import qrcode, os.path, sys, sqlite3, os
+from dotenv import load_dotenv
 
-from flask import (Flask, g, redirect, render_template, request, session, url_for, Response)
+from flask import (Flask, g, redirect, render_template, request, session, url_for, Response, abort)
 
-# a simple demo dataset will be created.
 LISTEN_ALL = "0.0.0.0"
 FLASK_IP = LISTEN_ALL
 FLASK_PORT = 81
 FLASK_DEBUG = True
 
-app = Flask(__name__)
-app.secret_key = 'geheimekey'
+IPS = ['182.103.176.114', '185.78.92.150']
 
+load_dotenv()
+
+app = Flask(__name__)
+app.secret_key = os.getenv('S_KEY')
+
+def toegang_limiteren():
+    ip_adres = request.remote_addr
+    if ip_adres not in IPS:
+        abort(403)
 
 @app.before_request
 def before_request():
+    toegang_limiteren()
     g.user = None
 
 
